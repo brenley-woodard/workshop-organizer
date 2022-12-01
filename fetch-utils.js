@@ -28,3 +28,13 @@ export async function signOutUser() {
 }
 
 /* Data functions */
+
+export async function getWorkshops() {
+    const response = await client.from('workshops').select('*');
+
+    return checkError(response);
+}
+
+function checkError(response) {
+    return response.error ? console.error(response.error) : response.data;
+}
