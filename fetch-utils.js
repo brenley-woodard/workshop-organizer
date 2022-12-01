@@ -35,6 +35,12 @@ export async function getWorkshops() {
     return checkError(response);
 }
 
+export async function createStudent(student) {
+    const response = await client.from('students').insert(student);
+
+    return checkError(response);
+}
+
 export async function deleteStudent(studentID) {
     const response = await client.from('students').delete().match({ id: studentID }).single();
     console.log(response);

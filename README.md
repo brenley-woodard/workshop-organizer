@@ -1,3 +1,8 @@
+![](./assets/student-policies.png)
+![](./assets/workshops-policies.png)
+![](./assets/student-table.png)
+![](./assets/workshops-table.png)
+
 ![](./assets/rubric.png)
 ![](./assets/workshop.png)
 ![](./assets/create.png)
@@ -24,5 +29,3 @@
 4. Delete member (on workshops page)
     - create deleteMember(student_id) in fetch-utils
     - add event listener to member el that deletes when clicked
-
-small change
