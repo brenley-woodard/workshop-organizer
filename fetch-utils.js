@@ -36,8 +36,8 @@ export async function getWorkshops() {
 }
 
 export async function deleteStudent(studentID) {
-    const response = client.from('students').delete().match({ id: studentID }).single();
-
+    const response = await client.from('students').delete().match({ id: studentID }).single();
+    console.log(response);
     return checkError(response);
 }
 

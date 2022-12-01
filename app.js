@@ -29,6 +29,7 @@ async function fetchAndDisplayWorkshops() {
             studentEl.textContent = `${student.name}: ${student.email}`;
 
             studentEl.addEventListener('click', async () => {
+                console.log(student.id);
                 await deleteStudent(student.id);
                 fetchAndDisplayWorkshops();
             });
