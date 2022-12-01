@@ -30,7 +30,7 @@ export async function signOutUser() {
 /* Data functions */
 
 export async function getWorkshops() {
-    const response = await client.from('workshops').select('*');
+    const response = await client.from('workshops').select('*, students(*)');
 
     return checkError(response);
 }

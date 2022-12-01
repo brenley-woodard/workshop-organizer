@@ -23,6 +23,14 @@ async function fetchAndDisplayWorkshops() {
 
     for (let workshop of workshops) {
         const workshopEl = renderWorkshop(workshop);
+        const studentsEl = document.createElement('ul');
+        for (let student of workshop.students) {
+            const studentEl = document.createElement('li');
+            studentEl.textContent = `${student.name}: ${student.email}`;
+            studentsEl.append(studentEl);
+        }
+
+        workshopEl.append(studentsEl);
         workshopsContainer.append(workshopEl);
     }
 }
