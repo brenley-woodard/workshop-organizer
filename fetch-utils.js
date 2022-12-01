@@ -35,6 +35,12 @@ export async function getWorkshops() {
     return checkError(response);
 }
 
+export async function deleteStudent(studentID) {
+    const response = client.from('students').delete().match({ id: studentID }).single();
+
+    return checkError(response);
+}
+
 function checkError(response) {
     return response.error ? console.error(response.error) : response.data;
 }
