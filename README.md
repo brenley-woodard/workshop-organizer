@@ -24,3 +24,5 @@
 4. Delete member (on workshops page)
     - create deleteMember(student_id) in fetch-utils
     - add event listener to member el that deletes when clicked
+
+small change
