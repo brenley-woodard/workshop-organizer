@@ -8,7 +8,7 @@
 
     - add two tables (workshops & students)
 
-2. Workshops Page
+2. Workshops Page (landing page)
 
     - getWorkshops function that fetches all of the workshops and their members
     - render function that displays the workshops
