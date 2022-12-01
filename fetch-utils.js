@@ -1,5 +1,6 @@
-const SUPABASE_URL = '';
-const SUPABASE_KEY = '';
+const SUPABASE_URL = 'https://ogfxwdqfdtaaoiuiclsh.supabase.co';
+const SUPABASE_KEY =
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9nZnh3ZHFmZHRhYW9pdWljbHNoIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NjgxMDgwNjIsImV4cCI6MTk4MzY4NDA2Mn0.5JRX_e27xoEYI26VTDundVtD05vASo1z964M0KcbMNc';
 const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 /* Auth related functions */
@@ -27,3 +28,25 @@ export async function signOutUser() {
 }
 
 /* Data functions */
+
+export async function getWorkshops() {
+    const response = await client.from('workshops').select('*, students(*)');
+
+    return checkError(response);
+}
+
+export async function createStudent(student) {
+    const response = await client.from('students').insert(student);
+
+    return checkError(response);
+}
+
+export async function deleteStudent(studentID) {
+    const response = await client.from('students').delete().match({ id: studentID }).single();
+    console.log(response);
+    return checkError(response);
+}
+
+function checkError(response) {
+    return response.error ? console.error(response.error) : response.data;
+}
