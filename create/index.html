@@ -10,7 +10,7 @@
             defer
             src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1.35.7/dist/umd/supabase.min.js"
         ></script>
-        <script type="module" src="auth.js"></script>
+        <script type="module" src="create.js"></script>
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -28,7 +28,11 @@
     <body>
         <header class="page-header">
             <img class="logo" src="/assets/paper.png" />
-            <p class="title">Create Page</p>
+            <p class="title">Join a Group</p>
+            <nav>
+                <a href="/">Home</a>
+                <a id="sign-out-link" href="../auth">SignOut</a>
+            </nav>
         </header>
 
         <main>
